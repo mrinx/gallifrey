@@ -1,0 +1,44 @@
+firewall {
+	filter my-filter {
+		term term1 {
+			from {
+				source-address 192.168.0.1/30;
+				protocol tcp;
+			}
+			then {
+				accept;
+			}
+		}
+		term term2 {
+			from {
+				source-address 192.168.0.2/30;
+				destination-address 192.168.0.3/32;
+			}
+			then {
+				reject;
+				syslog;
+			}
+		}
+	}
+	filter my-filter2 {
+		term term1 {
+			from {
+				source-address 192.168.0.1/32;
+				protocol tcp;
+			}
+			then {
+				accept;
+			}
+		}
+		term term2 {
+			from {
+				source-address 192.168.0.2/32;
+				destination-address 192.168.0.3/32;
+			}
+			then {
+				reject;
+				syslog;
+			}
+		}
+	}
+}

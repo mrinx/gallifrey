@@ -1,0 +1,7 @@
+access-list 102 deny udp any any
+access-list 102 permit tcp 127.0.0.1 0.255.255.255 205.131.175.2 255.255.255.255
+access-list 102 permit tcp 127.0.0.1 255.255.255.255 205.131.175.2 255.255.255.255
+access-list 102 permit tcp any host 205.131.175.2
+access-list 102 permit tcp any host 205.131.175.2
+access-list 102 deny udp host 127.0.0.1 any
+access-list 102 deny udp host 127.0.0.1 any
